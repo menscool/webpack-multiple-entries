@@ -1,0 +1,121 @@
+{
+  "entry": {
+    "project-blue": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/projects/project-blue",
+    "project-green": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/projects/project-green"
+  },
+  "output": {
+    "path": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules",
+    "filename": "[name]/main.js"
+  },
+  "module": {
+    "rules": [
+      {
+        "test": {},
+        "exclude": {},
+        "use": {
+          "loader": "babel-loader",
+          "options": {
+            "presets": [
+              "@babel/preset-env"
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "devServer": {
+    "contentBase": [
+      "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-blue",
+      "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-green"
+    ],
+    "contentBasePublicPath": [
+      "/modules/project-blue",
+      "/modules/project-green"
+    ],
+    "openPage": "project-blue",
+    "compress": true,
+    "port": 9000
+  },
+  "plugins": [
+    {
+      "options": {
+        "template": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/index.html",
+        "templateContent": false,
+        "filename": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-blue/index.html",
+        "publicPath": "auto",
+        "hash": false,
+        "inject": "body",
+        "scriptLoading": "blocking",
+        "compile": true,
+        "favicon": false,
+        "minify": "auto",
+        "cache": true,
+        "showErrors": true,
+        "chunks": "all",
+        "excludeChunks": [],
+        "chunksSortMode": "auto",
+        "meta": {},
+        "base": false,
+        "title": "Webpack App",
+        "xhtml": false
+      },
+      "version": 4
+    },
+    {
+      "options": {
+        "template": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/index.html",
+        "templateContent": false,
+        "filename": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-green/index.html",
+        "publicPath": "auto",
+        "hash": false,
+        "inject": "body",
+        "scriptLoading": "blocking",
+        "compile": true,
+        "favicon": false,
+        "minify": "auto",
+        "cache": true,
+        "showErrors": true,
+        "chunks": "all",
+        "excludeChunks": [],
+        "chunksSortMode": "auto",
+        "meta": {},
+        "base": false,
+        "title": "Webpack App",
+        "xhtml": false
+      },
+      "version": 4
+    },
+    {
+      "patterns": [
+        {
+          "from": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/assets",
+          "to": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-blue/assets"
+        },
+        {
+          "from": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/images",
+          "to": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-blue/images"
+        },
+        {
+          "from": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/assets",
+          "to": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-green/assets"
+        },
+        {
+          "from": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/src/common/images",
+          "to": "/Users/a.vaychkus/WebstormProjects/webpack-multiple-entries/build/modules/project-green/images"
+        }
+      ],
+      "options": {}
+    },
+    {
+      "definitions": {
+        "PROJECTS": "[\"project-blue\",\"project-green\"]"
+      }
+    }
+  ],
+  "resolve": {
+    "extensions": [
+      ".js",
+      ".jsx"
+    ]
+  }
+}
